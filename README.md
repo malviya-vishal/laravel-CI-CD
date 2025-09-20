@@ -20,11 +20,11 @@ This package helps developers quickly set up CI/CD pipelines with pre-configured
 ## Installation
 
 Install the package via Composer:
-
-```bash
 composer require vishal-laravel/cicd-generator
 
-Usage
+---
+
+## Usage
 
 After installation, publish the CI/CD templates using:
 
@@ -33,7 +33,9 @@ php artisan cicd:install
 
 This command will add ready-to-use YAML files for GitHub, GitLab, or Bitbucket pipelines into your project.
 
-Configuration
+---
+
+## Configuration
 
 You can customize the generated files according to your project's needs.
 
@@ -43,17 +45,23 @@ Example file locations:
 .gitlab-ci.yml
 bitbucket-pipelines.yml
 
-Requirements
+---
+
+## Requirements
 
 PHP >= 7.4
 
 Laravel 10 or 11
 
-Contributing
+---
+
+## Contributing
 
 Contributions are welcome!
 Please fork the repository, make your changes, and submit a pull request.
 
-License
+---
+
+## License
 
 This package is open-sourced software licensed under the MIT license.
