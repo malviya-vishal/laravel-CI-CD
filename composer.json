@@ -1,0 +1,30 @@
+{
+    "name": "vishal-laravel/cicd-generator",
+    "description": "Laravel package to generate CI/CD YAML files for GitHub Actions, GitLab CI/CD, and Bitbucket Pipelines.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vishal Malviya",
+            "email": "malviyavishal1898@email.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "illuminate/support": "^10.0 || ^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "VishalLaravel\\CICDGenerator\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "VishalLaravel\\CICDGenerator\\CICDServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

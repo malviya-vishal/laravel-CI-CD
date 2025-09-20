@@ -1,0 +1,34 @@
+stages:
+  - install
+  - lint
+  - format
+
+variables:
+  PHP_VERSION: "8.2"
+
+before_script:
+  - apt-get update && apt-get install -y unzip curl git
+  - curl -sS https://getcomposer.org/installer | php
+  - mv composer.phar /usr/local/bin/composer
+  - composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+  - npm install
+
+pint:
+  stage: lint
+  script:
+    - vendor/bin/pint
+
+frontend_format:
+  stage: format
+  script:
+    - npm run format
+
+frontend_lint:
+  stage: lint
+  script:
+    - npm run lint
+
+# test:
+#   stage: test
+#   script:
+#     - php artisan test

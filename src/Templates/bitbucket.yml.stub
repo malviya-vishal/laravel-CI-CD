@@ -1,0 +1,36 @@
+image: composer:2.5
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Laravel CI
+          caches:
+            - composer
+            - node
+          script:
+            - apt-get update && apt-get install -y unzip git curl
+            - curl -sS https://getcomposer.org/installer | php
+            - php composer.phar install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+            - npm install
+            - vendor/bin/pint
+            - npm run format
+            - npm run lint
+
+    develop:
+      - step:
+          name: Laravel CI (develop)
+          caches:
+            - composer
+            - node
+          script:
+            - apt-get update && apt-get install -y unzip git curl
+            - curl -sS https://getcomposer.org/installer | php
+            - php composer.phar install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+            - npm install
+            - vendor/bin/pint
+            - npm run format
+            - npm run lint
+
+# Uncomment below to enable tests
+#     - php artisan test
