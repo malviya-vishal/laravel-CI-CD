@@ -20,6 +20,7 @@ This package helps developers quickly set up CI/CD pipelines with pre-configured
 ## Installation
 
 Install the package via Composer:
+
 composer require vishal-laravel/cicd-generator
 
 ---
